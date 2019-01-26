@@ -1,399 +1,3 @@
-let board = [
-      [1,2,3],
-      [4,5,6],
-      [7,8,9],
-];
-
-let p1Counter = 1;
-let p2Counter = 1;
-
-class Player {
-  constructor() {
-    this.isTurn = false;
-    this.win = false;
-  }
-}
-
-class Space {
-  constructor(id) {
-    this.played = false;
-    this.id = id;
-  }
-
-  addSymbolX(space) {
-    $(space).append("<div class='x'>X</div>");
-  }
-  
-  addSymbolO(space) {
-    $(space).append("<div class='o'>O</div>");
-  }
-}
-
-//create players
-const player1 = new Player();
-const player2 = new Player();
-
-//create spaces
-const space1 = new Space('one');
-const space2 = new Space('two');
-const space3 = new Space('three');
-const space4 = new Space('four');
-const space5 = new Space('five');
-const space6 = new Space('six');
-const space7 = new Space('seven');
-const space8 = new Space('eight');
-const space9 = new Space('nine');
-
-//switch turns
-function switchTurns(one, two) {
-  one.isTurn = true;
-  two.isTurn = false;
-}
-
-//gameplay
-player1.isTurn = true;
-
-$('.grid').on('click', (e) => {
-  if(player1.win !== true && player2.win !== true) {
-    if(e.target.id === space1.id && space1.played === false) {
-       if(player1.isTurn) {
-         space1.addSymbolX(e.target);
-         let index = board[0].indexOf(1);
-         if(index !== -1) {
-           board[0][index] = 'x';
-         }
-         switchTurns(player2, player1);
-         space1.played = true;
-       } else {
-           space1.addSymbolO(e.target);
-           let index = board[0].indexOf(1);
-           if(index !== -1) {
-             board[0][index] = 'o';
-           }
-           switchTurns(player1, player2);
-           space1.played = true;
-       }
-    } 
-
-    else if (e.target.id === space2.id && space2.played === false) {
-       if(player1.isTurn) {
-         space2.addSymbolX(e.target); 
-         let index = board[0].indexOf(2);
-         if(index !== -1) {
-           board[0][index] = 'x';
-         }
-         switchTurns(player2, player1);
-         space2.played = true;
-       } else {
-           space2.addSymbolO(e.target);
-           let index = board[0].indexOf(2);
-           if(index !== -1) {
-             board[0][index] = 'o';
-           }
-           switchTurns(player1, player2);
-           space2.played = true;
-       } 
-    }
-
-    else if (e.target.id === space3.id && space3.played === false) {
-       if(player1.isTurn) {
-         space3.addSymbolX(e.target);   
-         let index = board[0].indexOf(3);
-         if(index !== -1) {
-           board[0][index] = 'x';
-         }
-         switchTurns(player2, player1);
-         space3.played = true;
-       } else {
-           space3.addSymbolO(e.target); 
-           let index = board[0].indexOf(3);
-           if(index !== -1) {
-             board[0][index] = 'o';
-           }
-           switchTurns(player1, player2);
-           space3.played = true;
-       }   
-    }
-
-   else if (e.target.id === space4.id && space4.played === false) {
-       if(player1.isTurn) {
-         space4.addSymbolX(e.target);  
-         let index = board[1].indexOf(4);
-         if(index !== -1) {
-           board[1][index] = 'x';
-         }
-         switchTurns(player2, player1);
-         space4.played = true;
-       } else {
-           space4.addSymbolO(e.target);
-           let index = board[1].indexOf(4);
-           if(index !== -1) {
-             board[1][index] = 'o';
-           }
-           switchTurns(player1, player2);
-           space4.played = true;
-       } 
-    }
-
-    else if (e.target.id === space5.id && space5.played === false) {
-       if(player1.isTurn) {
-         space5.addSymbolX(e.target); 
-         let index = board[1].indexOf(5);
-         if(index !== -1) {
-           board[1][index] = 'x';
-         }
-         switchTurns(player2, player1);
-         space5.played = true;
-       } else {
-           space5.addSymbolO(e.target); 
-           let index = board[1].indexOf(5);
-           if(index !== -1) {
-             board[1][index] = 'o';
-           }
-           switchTurns(player1, player2);
-           space5.played = true;
-       }   
-    }  
-
-    else if (e.target.id === space6.id && space6.played === false) {
-       if(player1.isTurn) {
-         space6.addSymbolX(e.target);
-         let index = board[1].indexOf(6);
-         if(index !== -1) {
-           board[1][index] = 'x';
-         }
-         switchTurns(player2, player1);
-         space6.played = true;
-       } else {
-           space6.addSymbolO(e.target);
-           let index = board[1].indexOf(6);
-           if(index !== -1) {
-             board[1][index] = 'o';
-           }
-           switchTurns(player1, player2);
-           space6.played = true;
-       } 
-    }
-
-    else if (e.target.id === space7.id && space7.played === false) {
-       if(player1.isTurn) {
-         space7.addSymbolX(e.target);
-         let index = board[2].indexOf(7);
-         if(index !== -1) {
-           board[2][index] = 'x';
-         }
-         switchTurns(player2, player1);
-         space7.played = true;
-       } else {
-           space7.addSymbolO(e.target); 
-           let index = board[2].indexOf(7);
-           if(index !== -1) {
-             board[2][index] = 'o';
-           }
-           switchTurns(player1, player2);
-           space7.played = true;
-       }   
-    }
-
-   else if (e.target.id === space8.id && space8.played === false) {
-       if(player1.isTurn) {
-         space8.addSymbolX(e.target);
-         let index = board[2].indexOf(8);
-         if(index !== -1) {
-           board[2][index] = 'x';
-         }
-         switchTurns(player2, player1);
-         space8.played = true;
-       } else {
-           space8.addSymbolO(e.target);
-           let index = board[2].indexOf(8);
-           if(index !== -1) {
-             board[2][index] = 'o';
-           }
-           switchTurns(player1, player2);
-           space8.played = true;
-       } 
-    }
-
-    else if (e.target.id === space9.id && space9.played === false) {
-       if(player1.isTurn) {
-         space9.addSymbolX(e.target);
-         let index = board[2].indexOf(9);
-         if(index !== -1) {
-           board[2][index] = 'x';
-         }
-         switchTurns(player2, player1);
-         space9.played = true;
-       } else {
-           space9.addSymbolO(e.target); 
-           let index = board[2].indexOf(9);
-           if(index !== -1) {
-             board[2][index] = 'o';
-           }
-           switchTurns(player1, player2);
-           space9.played = true;
-       }   
-    }
-
-    //check if playerX wins
-    // top row
-    if(board[0][0] === "x" && board[0][1] === "x" && board[0][2] === "x") {
-      $('.header').text('Player One Wins!');
-      $('.header').css('color', 'tomato');
-      $('.p1').text ('Player 1: '+ p1Counter);
-      p1Counter += 1;
-      player1.win = true;
-    }  
-    // middle row 
-    else if (board[1][0] === "x" && board[1][1] === "x" && board[1][2] === "x") {
-      $('.header').text('Player One Wins!');
-      $('.header').css('color', 'tomato');
-      $('.p1').text ('Player 1:' + p1counter);
-      p1Counter += 1;
-      player1.win = true;
-    }
-    // bottom row
-    else if (board[2][0] === "x" && board[2][1] === "x" && board[2][2] === "x") {
-      $('.header').text('Player One Wins!'); 
-      $('.header').css('color', 'tomato');
-      $('.p1').text ('Player 1: ' + p1Counter);
-      p1Counter += 1;
-      player1.win = true;
-    }
-    // first column
-    else if (board[0][0] === 'x' && board[1][0] === 'x' && board[2][0] === 'x') {
-      $('.header').text('Player One Wins!'); 
-      $('.header').css('color', 'tomato');
-      $('.p1').text ('Player 1: ' + p1Counter);
-      p1Counter += 1;
-      player1.win = true;
-    }
-    // second column
-    else if (board[0][1] === 'x' && board[1][1] === 'x' && board[2][1] === 'x') {
-      $('.header').text('Player One Wins!'); 
-      $('.header').css('color', 'tomato');
-      $('.p1').text ('Player 1: ' + p1Counter);
-      p1Counter += 1;
-      player1.win = true;
-    }
-    // third column
-    else if (board[0][2] === 'x' && board[1][2] === 'x' && board[2][2] === 'x') {
-      $('.header').text('Player One Wins!'); 
-      $('.header').css('color', 'tomato');
-      $('.p1').text ('Player 1: ' + p1Counter);
-      p1Counter += 1;
-      player1.win = true;
-    }
-    // diaganol right
-    else if (board[0][0] === 'x' && board[1][1] === 'x' && board[2][2] === 'x') {
-      $('.header').text('Player One Wins!');  
-      $('.header').css('color', 'tomato');
-      $('.p1').text ('Player 1: ' + p1Counter);
-      p1Counter += 1;
-      player1.win = true;
-    }
-    // diaganol left
-    else if (board[0][2] === 'x' && board[1][1] === 'x' && board[2][0] === 'x') {
-      $('.header').text('Player One Wins!'); 
-      $('.header').css('color', 'tomato');
-      $('.p1').text ('Player 1: ' + p1Counter);
-      p1Counter += 1;
-      player1.win = true;
-    } 
-
-    // check if player 2 wins
-
-    //top row
-    if(board[0][0] === "o" && board[0][1] === "o" && board[0][2] === "o") {
-      $('.header').text('Player Two Wins!');
-      $('.header').css('color', '#33DBFF');
-      $('.p2').text ('Player 2: ' + p2Counter);
-      p2Counter += 1;
-      player2.win = true;
-    }  
-    // middle row 
-    else if (board[1][0] === "o" && board[1][1] === "o" && board[1][2] === "o") {
-      $('.header').text('Player Two Wins!');  
-      $('.header').css('color', '#33DBFF');
-      $('.p2').text ('Player 2: ' + p2Counter);
-      p2Counter += 1;
-      player2.win = true;
-    }
-    // bottom row
-    else if (board[2][0] === "o" && board[2][1] === "o" && board[2][2] === "o") {
-      $('.header').text('Player Two Wins!');   
-      $('.header').css('color', '#33DBFF');
-      $('.p2').text ('Player 2: ' + p2Counter);
-      p2Counter += 1;
-      player2.win = true;
-    }
-    // first column
-    else if (board[0][0] === 'o' && board[1][0] === 'o' && board[2][0] === 'o') {
-      $('.header').text('Player Two Wins!'); 
-      $('.header').css('color', '#33DBFF');
-      $('.p2').text ('Player 2: ' + p2Counter);
-      p2Counter += 1;
-      player2.win = true;
-    }
-    // second column
-    else if (board[0][1] === 'o' && board[1][1] === 'o' && board[2][1] === 'o') {
-      $('.header').text('Player Two Wins!');  
-      $('.header').css('color', '#33DBFF');
-      $('.p2').text ('Player 2: ' + p2Counter);
-      p2Counter += 1;
-      player2.win = true;
-    }
-    // third column
-    else if (board[0][2] === 'o' && board[1][2] === 'o' && board[2][2] === 'o') {
-      $('.header').text('Player Two Wins!');  
-      $('.header').css('color', '#33DBFF');
-      $('.p2').text ('Player 2: ' + p2Counter);
-      p2Counter += 1;
-      player2.win = true;
-    }
-    // diaganol right
-    else if (board[0][0] === 'o' && board[1][1] === 'o' && board[2][2] === 'o') {
-      $('.header').text('Player Two Wins!');  
-      $('.header').css('color', '#33DBFF');
-      $('.p2').text ('Player 2: ' + p2Counter);
-      p2Counter += 1;
-      player2.win = true;
-    }
-    // diaganol left
-    else if (board[0][2] === 'o' && board[1][1] === 'o' && board[2][0] === 'o') {
-      $('.header').text('Player Two Wins!');    
-      $('.header').css('color', '#33DBFF');
-      $('.p2').text ('Player 2: ' + p2Counter);
-      p2Counter += 1;
-      player2.win = true;
-    }
-  }
-});
-
-
-$('.reset').on('click', () => {
-  player1.isTurn = true;
-  player2.isTurn = false;
-  player1.win = false;
-  player2.win = false;
-  $('.x').remove();
-  $('.o').remove();
-  $('.header').text('Tic Tac Toe');
-  board = [[1,2,3],[4,5,6],[7,8,9]];
-  space1.played = false;
-  space2.played = false;
-  space3.played = false;
-  space4.played = false;
-  space5.played = false;
-  space6.played = false;
-  space7.played = false;
-  space8.played = false;
-  space9.played = false;  
-});
-
-
-
-// Mario Game 
 var LEVELS = [
   ["                                                                                ",
    "                                                                                ",
@@ -534,52 +138,52 @@ var LEVELS = [
 
 
 function Vector(x, y) {
-  this.x = x; this.y = y;
+	this.x = x; this.y = y;
 }
 
 Vector.prototype.plus = function(other) {
-  return new Vector(this.x + other.x, this.y + other.y);
+	return new Vector(this.x + other.x, this.y + other.y);
 };
 
 Vector.prototype.times = function(scale) {
-  return new Vector(this.x * scale, this.y * scale);
+	return new Vector(this.x * scale, this.y * scale);
 };
 
 // Note: uppercase words are used that means constructor are values
 var actorchars =  {
-  "@": Player,
-  "o": Coin,
-  "=": Lava,
-  "|": Lava,
-  "v": Lava
+	"@": Player,
+	"o": Coin,
+	"=": Lava,
+	"|": Lava,
+	"v": Lava
 };
 
 function Player(pos) {
-  this.pos = pos.plus(new Vector(0, -.5));
-  this.size = new Vector(.5, 1);
-  this.speed = new Vector(0, 0);
+	this.pos = pos.plus(new Vector(0, -.5));
+	this.size = new Vector(.5, 1);
+	this.speed = new Vector(0, 0);
 }
 Player.prototype.type = "player";
 
 function Lava(pos, ch) {
-  this.pos = pos;
-  this.size = new Vector(1, 1);
-  if (ch === "=")
-    this.speed = new Vector(2, 0);
-  else if (ch === '|')
-    this.speed = new Vector(0, 2);
-  else if (ch === 'v'){
-    this.speed = new Vector(0, 3);       
-    this.repeatPos = pos;
-  }
+	this.pos = pos;
+	this.size = new Vector(1, 1);
+	if (ch === "=")
+		this.speed = new Vector(2, 0);
+	else if (ch === '|')
+		this.speed = new Vector(0, 2);
+	else if (ch === 'v'){
+		this.speed = new Vector(0, 3); 		   
+		this.repeatPos = pos;
+	}
 }
 Lava.prototype.type = "Lava";
 
 function Coin(pos) {
-  this.basePos = this.pos = pos;
-  this.size = new Vector(.6, .6);
-  // take a look back
-  this.wobble = Math.random() * Math.PI * 2;
+	this.basePos = this.pos = pos;
+	this.size = new Vector(.6, .6);
+	// take a look back
+	this.wobble = Math.random() * Math.PI * 2;
 }
 Coin.prototype.type = "coin";
 
@@ -588,53 +192,53 @@ Level.prototype.isFinished = function() {
 };
 
 function Level(plan) {
-  this.width = plan[0].length;
-  this.height = plan.length;
-  this.grid = [];
-  this.actors = [];
-  
-  for (var y = 0; y < this.height; y++) {
-    var line = plan[y],  gridLine = [];
-    for (var x = 0; x < this.width; x++) {
-      var ch = line[x], fieldType = null;
-      var Actor = actorchars[ch];
-      if (Actor)
-        this.actors.push(new Actor(new Vector(x, y), ch));
-      else if (ch === "x")
-        fieldType = "wall";
-      else if (ch === "!")
-        fieldType = "lava";
-      else if (ch === "|")
-        fieldType = "lava";
-      else if (ch === "=")
-        fieldType = "lava";
-      else if (ch === "v"){
-        fieldType = "lava";
-        console.log(fieldType);
-      }
-      gridLine.push(fieldType)
-    }
-    this.grid.push(gridLine);
-  }
-  this.player = this.actors.filter(function(actor) {
-    return actor.type === "player"
-  })[0];  
-  this.status = this.finishDelay = null;
+	this.width = plan[0].length;
+	this.height = plan.length;
+	this.grid = [];
+	this.actors = [];
+	
+	for (var y = 0; y < this.height; y++) {
+		var line = plan[y],  gridLine = [];
+		for (var x = 0; x < this.width; x++) {
+			var ch = line[x], fieldType = null;
+			var Actor = actorchars[ch];
+			if (Actor)
+				this.actors.push(new Actor(new Vector(x, y), ch));
+			else if (ch === "x")
+				fieldType = "wall";
+			else if (ch === "!")
+				fieldType = "lava";
+			else if (ch === "|")
+				fieldType = "lava";
+			else if (ch === "=")
+				fieldType = "lava";
+			else if (ch === "v"){
+				fieldType = "lava";
+				console.log(fieldType);
+			}
+			gridLine.push(fieldType)
+		}
+		this.grid.push(gridLine);
+	}
+	this.player = this.actors.filter(function(actor) {
+		return actor.type === "player"
+	})[0];	
+	this.status = this.finishDelay = null;
 }
 
 function element(name, className) {
-  var elem = document.createElement(name);
-  if(className) elem.className = className;
-  return elem;
+	var elem = document.createElement(name);
+	if(className) elem.className = className;
+	return elem;
 }
 
 function DOMDisplay(parent, level) {
-  this.wrap = parent.appendChild(element("div", "game"));
-  this.level = level;
-  
-  this.wrap.appendChild(this.drawBackground());
-  this.actorLayer = null;
-  this.drawFrame();
+	this.wrap = parent.appendChild(element("div", "game"));
+	this.level = level;
+	
+	this.wrap.appendChild(this.drawBackground());
+	this.actorLayer = null;
+	this.drawFrame();
 }
 
 
@@ -642,37 +246,37 @@ var scale = 15;
 
 
 DOMDisplay.prototype.drawBackground = function() {
-  var table = element("table", "background");
-  table.style.width = this.level.width * scale + "px";
-  table.style.height = this.level.height * scale + "px";
-  this.level.grid.forEach(function(row) {
+	var table = element("table", "background");
+	table.style.width = this.level.width * scale + "px";
+	table.style.height = this.level.height * scale + "px";
+	this.level.grid.forEach(function(row) {
   var rowElement = table.appendChild(element("tr"));
-    rowElement.style.height = scale + "px";
-    row.forEach(function(type) {
-      rowElement.appendChild(element("td", type));
-    });
-  });
-  return table;
+		rowElement.style.height = scale + "px";
+		row.forEach(function(type) {
+			rowElement.appendChild(element("td", type));
+		});
+	});
+	return table;
 };
 
 DOMDisplay.prototype.drawActors = function() {
-  var wrap = element("div");
-  this.level.actors.forEach(function(actor) {
-    var rect = wrap.appendChild(element("div", "actor " + actor.type));
-    rect.style.width = actor.size.x * scale + "px";
-    rect.style.height = actor.size.y * scale + "px";
-    rect.style.left = actor.pos.x * scale + "px";
-    rect.style.top = actor.pos.y * scale + "px";
-  });
-  return wrap;
+	var wrap = element("div");
+	this.level.actors.forEach(function(actor) {
+		var rect = wrap.appendChild(element("div", "actor " + actor.type));
+		rect.style.width = actor.size.x * scale + "px";
+		rect.style.height = actor.size.y * scale + "px";
+		rect.style.left = actor.pos.x * scale + "px";
+		rect.style.top = actor.pos.y * scale + "px";
+	});
+	return wrap;
 }
 
 DOMDisplay.prototype.drawFrame = function() {
-  if (this.actorLayer)
-    this.wrap.removeChild(this.actorLayer);
-  this.actorLayer = this.wrap.appendChild(this.drawActors());
-  this.wrap.className = "game " + (this.level.status || "");
-  this.scrollPlayerIntoView();
+	if (this.actorLayer)
+		this.wrap.removeChild(this.actorLayer);
+	this.actorLayer = this.wrap.appendChild(this.drawActors());
+	this.wrap.className = "game " + (this.level.status || "");
+	this.scrollPlayerIntoView();
 };
 
 
@@ -701,7 +305,7 @@ DOMDisplay.prototype.scrollPlayerIntoView = function() {
 };
 
 DOMDisplay.prototype.clear = function() {
-  this.wrap.parentNode.removeChild(this.wrap);
+	this.wrap.parentNode.removeChild(this.wrap);
 };
 
 Level.prototype.obstacleAt = function(pos, size) {
