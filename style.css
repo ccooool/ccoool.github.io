@@ -118,7 +118,7 @@ body {
 
 
 
-
+/*
 
 
 
@@ -311,4 +311,4 @@ h2 {
 .time.start::after {
   -webkit-animation: rotate 1s linear infinite;
   animation: rotate 1s linear infinite;
-}
+}*/
