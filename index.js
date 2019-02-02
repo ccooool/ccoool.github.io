@@ -390,7 +390,7 @@ Player.prototype.moveX = function(step, level, keys) {
 };
 
 var gravity = 30;
-var jumpSpeed = 17;
+var jumpSpeed = 10;
 
 Player.prototype.moveY = function(step, level, keys) {
   this.speed.y += step * gravity;
@@ -425,8 +425,10 @@ Player.prototype.act = function(step, level, keys) {
 
 Level.prototype.playerTouched = function(type, actor) {
   if (type == "lava" && this.status == null) {
-    this.status = "lost";
-    this.finishDelay = 1;
+    // this.status = "lost";
+    // this.finishDelay = 1;
+    playerXSpeed = 50
+    jumpSpeed = 50
   } else if (type == "coin") {
     this.actors = this.actors.filter(function(other) {
       return other != actor;
